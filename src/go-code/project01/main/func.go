@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 /**
-函数学习
+函数学习记录
 */
 func main() {
 
