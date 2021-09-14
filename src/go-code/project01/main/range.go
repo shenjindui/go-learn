@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+/**
+  range 的用法
+*/
 func main() {
 	// range 关键字用于 for 循环中迭代数组(array)、切片(slice)、通道(channel)或集合(map)的元素
 	//在数组和切片中它返回元素的索引和索引对应的值(index - value)，在集合中返回 key-value 对。
