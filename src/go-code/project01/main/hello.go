@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
+
+	//短变量声明操作符(:=)
 	fmt.Println("hello")
 
 	var a int = 4
