@@ -4,10 +4,15 @@ import (
 	"fmt"
 )
 
+type User2 struct {
+	name string
+	age  int
+}
+
 type Phone interface {
 	call(a int)
 
-	getNameById(id string)
+	getNameById(id string) User2
 }
 
 type NokiaPhone struct {
@@ -16,8 +21,11 @@ type NokiaPhone struct {
 func (nokiaPhone NokiaPhone) call(a int) {
 	fmt.Println("I am Nokia, I can call you!", a)
 }
-func (nokiaPhone NokiaPhone) getNameById(id string) {
-	fmt.Println("I am Nokia, I can call you!", id)
+func (nokiaPhone NokiaPhone) getNameById(id string) User2 {
+	return User2{
+		name: "shinnied",
+		age:  25,
+	}
 }
 
 type IPhone struct {
@@ -27,8 +35,9 @@ func (iPhone IPhone) call(a int) {
 	fmt.Println("I am iPhone, I can call you!", a)
 }
 
-func (iPhone IPhone) getNameById(id string) {
+func (iPhone IPhone) getNameById(id string) User2 {
 	fmt.Println("I am iPhone, I can call you!", id)
+	return User2{}
 }
 
 func main() {
@@ -36,6 +45,8 @@ func main() {
 
 	phone = new(NokiaPhone)
 	phone.call(1)
+	result := phone.getNameById("323232")
+	fmt.Println(result.name)
 
 	phone = new(IPhone)
 	phone.call(2)
