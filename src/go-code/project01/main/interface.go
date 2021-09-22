@@ -51,4 +51,12 @@ func main() {
 	phone = new(IPhone)
 	phone.call(2)
 
+	var x interface{}
+	x = 100
+	v, ok := x.(int)
+	fmt.Println(x, ok)
+	if ok {
+		fmt.Println(v)
+	}
+
 }
